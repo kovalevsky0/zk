@@ -51,4 +51,21 @@ or
 :wa
 ```
 
+## Full uninstalling
+
+### macOS
+
+```bash
+brew uninstall neovim
+```
+
+```bash
+rm -rf ~/.config/nvim/
+```
+
+```bash
+rm -rf ~/.local/share/nvim/
+rm -rf ~/.local/state/nvim/
+rm -rf ~/.local/cache/nvim/
+```
 

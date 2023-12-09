@@ -30,3 +30,7 @@ Here is all information and materials about **Obdisian**
 * [Discord](https://discord.gg/veuWUTm)
 * [Forum](https://forum.obsidian.md/)
 * [/r/ObsidianMD/](https://www.reddit.com/r/ObsidianMD/)
+
+## Plugins
+
+- [[Obsidian Dataview]]
