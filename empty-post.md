@@ -9,7 +9,7 @@ keywords:
 type: post
 public: false
 imageCopyright: byteski
-imageCopyrightUrl: "https://maxoid.io"
+imageCopyrightUrl: "https://mkvl.me"
 ---
 
 # empty

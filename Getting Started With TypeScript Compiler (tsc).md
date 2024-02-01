@@ -4,7 +4,7 @@ aliases:
   - /blog/article/getting-started-using-and-configuring-typescript-compiler
 date: "2021-05-16 20:00:00"
 image: images/getting-started-with-typescript-compiler.png
-images: ['images/getting-started-with-typescript-compiler.png']
+images: ["images/getting-started-with-typescript-compiler.png"]
 imageCopyright: Francesco Ungaro
 imageCopyrightUrl: "https://www.pexels.com/@francesco-ungaro"
 title: Getting Started With TypeScript Compiler (tsc)
@@ -19,36 +19,36 @@ type: blog
 public: true
 ---
 
-From the previous post [TypeScript - What Is All About And Why Should You Use It?](https://maxoid.io/blog/article/typescript-what-is-all-about-and-why-should-you-use-it) we know that TypeScript is a superset of JavaScript and programming language. But how can you use it? If you worked with JavaScript in Front End you know that your code is executing by [Web browser](Web%20browser.md). In Back End, your code is running by [Node](Node.md). What about TypeScript?
+From the previous post [TypeScript - What Is All About And Why Should You Use It?](https://mkvl.me/blog/article/typescript-what-is-all-about-and-why-should-you-use-it) we know that TypeScript is a superset of JavaScript and programming language. But how can you use it? If you worked with JavaScript in Front End you know that your code is executing by [Web browser](Web%20browser.md). In Back End, your code is running by [Node](Node.md). What about TypeScript?
 
 The thing is that TypeScript is provided with a special program, tool - compiler. A compiler is a program that compiles (transforms) one code to another.
 
 ## What is TypeScript compiler?
 
-As we mentioned before, TypeScript compiler is a tool, or program, that *compiles* (transforms) **valid** TypeScript code into JavaScript code. It is also a type checker and it validates TypeScript code
+As we mentioned before, TypeScript compiler is a tool, or program, that _compiles_ (transforms) **valid** TypeScript code into JavaScript code. It is also a type checker and it validates TypeScript code
 
 When you install TypeScript by [npm](npm.md) or [Yarn](Yarn.md) globally, the TypeScript compiler will be available on your local machine as a command **tsc**:
 
-````
+```
 npm i -g typescript
 tsc --version
-````
+```
 
-TypeScript compiler has many flags and options to use in various types of projects. You can use it in Front End project with libraries like [React](React.md). In [Angular](Angular.md) it is already used inside Angular's toolchain. You can also use **tsc** in Back End development with [Node](Node.md). Here is the post about [How To Setup Node TypeScript Workflow](https://maxoid.io/blog/article/setup-simple-workflow-to-write-node-typeScript-application-in-live-reload).
+TypeScript compiler has many flags and options to use in various types of projects. You can use it in Front End project with libraries like [React](React.md). In [Angular](Angular.md) it is already used inside Angular's toolchain. You can also use **tsc** in Back End development with [Node](Node.md). Here is the post about [How To Setup Node TypeScript Workflow](https://mkvl.me/blog/article/setup-simple-workflow-to-write-node-typeScript-application-in-live-reload).
 
 In this post, we will explore how to use **tsc** with a few general options.
 
 ## Usage
 
-We will use **tsc** with a simple example. It is an [command-line interface](command-line%20interface.md) app that asks us to type our first name and username and then greetings us. It is a Node.js application and we will execute it by Node. If you didn't install Node or you have Node with a version that is lower than 15 on your local machine, check out the post [How To Install or Update Node by Using nvm (Node Version Manager)](https://maxoid.io/blog/article/how-to-install-or-update-node-by-using-nvm).
+We will use **tsc** with a simple example. It is an [command-line interface](command-line%20interface.md) app that asks us to type our first name and username and then greetings us. It is a Node.js application and we will execute it by Node. If you didn't install Node or you have Node with a version that is lower than 15 on your local machine, check out the post [How To Install or Update Node by Using nvm (Node Version Manager)](https://mkvl.me/blog/article/how-to-install-or-update-node-by-using-nvm).
 
-If you don't know how to run a TypeScript compiler, I recommend checking out the post [Detecting Errors Before Running Code With TypeScript](https://maxoid.io/blog/article/detecting-errors-before-running-code-with-typescript). We will use pretty much the same example as in that post but with small differences.
+If you don't know how to run a TypeScript compiler, I recommend checking out the post [Detecting Errors Before Running Code With TypeScript](https://mkvl.me/blog/article/detecting-errors-before-running-code-with-typescript). We will use pretty much the same example as in that post but with small differences.
 
 Let's create a folder called **tsc-intro** or whatever you want. First of all, create two helper modules (files) with the following code:
 
 **createQuestioner.ts**:
 
-````ts
+```ts
 import { createInterface } from "readline";
 import { promisify } from "util";
 
@@ -74,19 +74,19 @@ export function createQuestioner(): Questioner {
     finishUp,
   };
 }
-````
+```
 
 **greeting.ts**:
 
-````ts
+```ts
 export function greeting(firstName: string, username: string) {
   console.log(`Hello, ${firstName} (@${username})!`);
 }
-````
+```
 
 These two functions will be used in **main** module of our app which is an entry point. Let's create file **main.ts**:
 
-````ts
+```ts
 import { createQuestioner } from "./createQuestioner";
 import { greeting } from "./greeting";
 
@@ -105,27 +105,27 @@ async function main() {
 }
 
 main();
-````
+```
 
-Also, you need to install Type Declarations of Node as a dev dependency in your local project. If you don't know about Type Declarations, check about the post [What Are Type Declaration Files In TypeScript](https://maxoid.io/blog/article/what-are-type-declaration-files-in-typescript).
+Also, you need to install Type Declarations of Node as a dev dependency in your local project. If you don't know about Type Declarations, check about the post [What Are Type Declaration Files In TypeScript](https://mkvl.me/blog/article/what-are-type-declaration-files-in-typescript).
 
-````
+```
 npm install --save-dev @types/node
-````
+```
 
 Don't focus on the code too much. It's just an example of TypeScript code but first of all, we need to focus on using the TypeScript compiler.
 
-Alright. Now it's time to use the TypeScript compiler to *transform* the TypeScript code into JavaScript code that we will execute by Node:
+Alright. Now it's time to use the TypeScript compiler to _transform_ the TypeScript code into JavaScript code that we will execute by Node:
 
-````
+```
 tsc main.ts
-````
+```
 
 Great! Now you have compiled file **main.js** that you can execute by command:
 
-````
+```
 node main.js
-````
+```
 
 You should have noticed that there are also new files that we didn't create in our folder: **createQuestioner.js** and **greeting.js**. Although we compile only file **main.ts**, TypeScript also compiles all modules that were used in **main.ts** - greeting.ts and createQuestioner.ts. The code from these modules will be executed by Node when we will run it by `node main.js`.
 
@@ -137,7 +137,7 @@ So, how does it works? The thing is that TypeScript by default compiles code tha
 
 **createQuestioner.js**:
 
-````js
+```js
 "use strict";
 exports.__esModule = true;
 exports.createQuestioner = void 0;
@@ -158,11 +158,11 @@ function createQuestioner() {
   };
 }
 exports.createQuestioner = createQuestioner;
-````
+```
 
 **greeting.js**:
 
-````js
+```js
 "use strict";
 exports.__esModule = true;
 exports.greeting = void 0;
@@ -170,17 +170,17 @@ function greeting(firstName, username) {
   console.log("Hello, " + firstName + " (@" + username + ")!");
 }
 exports.greeting = greeting;
-````
+```
 
-No code uses ECMAScript modules! In **createQuestioner.js** on line 20 the function *createQuestioner* is exporting by using CommonJS `exports.greeting = greeting;`. The same in **greeting.js**: on line 7 you will see the code `exports.greeting = greeting;` which is CommonJS.
+No code uses ECMAScript modules! In **createQuestioner.js** on line 20 the function _createQuestioner_ is exporting by using CommonJS `exports.greeting = greeting;`. The same in **greeting.js**: on line 7 you will see the code `exports.greeting = greeting;` which is CommonJS.
 
 Okay, the exporting is sorted out. What about importing modules?
 
 Let's look into the file **main.js**:
 
-*The file is quite large so I cut the code that is not important for us right now*
+_The file is quite large so I cut the code that is not important for us right now_
 
-````js
+```js
 "use strict";
 // some code here
 exports.__esModule = true;
@@ -214,7 +214,7 @@ function main() {
   });
 }
 main();
-````
+```
 
 On lines 4 and 5 (in the file - 39 and 40), you will see that modules **greeting** and **createQuestioner** is imported by CommonJS modules.
 
@@ -222,15 +222,15 @@ The great thing is that TypeScript is a very configurable tool and we can compil
 
 All we have to do is to use option **--module** with value **ESNext**:
 
-````
+```
 tsc --module ESNext main.ts
-````
+```
 
 The value **ESNext** means that TypeScript will compile code into the latest version of ECMAScript standard. For the purpose to use ECMAScript modules in compiled code it works for us.
 
 Let's look into compiled file **main.js** again:
 
-````
+```
 // ...
 import { createQuestioner } from "./createQuestioner";
 import { greeting } from "./greeting";
@@ -238,23 +238,23 @@ function main() {
     // ...
 }
 main();
-````
+```
 
 Great! We have the code with imports that we need. It's time to execute thins code by Node:
 
-````
+```
 node main.js
-````
+```
 
 And... It fails. Node tells us that we need to specify parameter **type** with value **module** in file **package.json**. First of all, we need to create package.json in our folder:
 
-````
+```
 npm init -y
-````
+```
 
 And then add the parameter in the file:
 
-````json
+```json
 {
   "devDependencies": {
     "@types/node": "^15.3.0"
@@ -271,26 +271,26 @@ And then add the parameter in the file:
   "description": "",
   "type": "module"
 }
-````
+```
 
 Try to run main.js again:
 
-````
+```
 node main.js
-````
+```
 
 It fails again!
 
-````
+```
 Error [ERR_MODULE_NOT_FOUND]: Cannot find module 'tsc-intro/createQuestioner' imported from /tsc-intro/main.js
 Did you mean to import ../createQuestioner.js?
-````
+```
 
 The new problem is that Node can't understand modules that are imported without file extensions **.js**. To solve this just use the special Node option for now:
 
-````
+```
 node --es-module-specifier-resolution=node main.js
-````
+```
 
 ## Separating files into different folders
 
@@ -300,32 +300,32 @@ We can manage it by separating files into different folders. One is for source c
 
 Create the folder **/src** and put all **.ts** files there:
 
-````
+```
 mkdir src
 mv *.ts src/
-````
+```
 
 Also, remove all compiled **.js** files in the root folder:
 
-````
+```
 rm *.js
-````
+```
 
 All we have to do is run TypeScript compiled with special options **outDir** which is a path to the folder there should be compiled JavaScript files.
 
-````
+```
 tsc --module ESNext --outDir "./dist" src/main.ts
-````
+```
 
 ## Watch mode
 
 Most of the time, we need to quickly change something in the code and see the result of the changes right now. Use this whole **tsc** command whenever we need to re-compile our project is a bit uncomfortable. We can use option **--watch** that re-run TypeScript compiler every time when files changes in **/src** folder.
 
-````
+```
 tsc --module ESNext --outDir "./dist" --watch src/main.ts
-````
+```
 
-Using **watch mode** is not enough for developing Node.js application because we also need to re-run Node after changes in the code. Check out the post [How To Setup Simple Workflow To Write Node TypeScript Application In Live Reload](https://maxoid.io/blog/article/setup-simple-workflow-to-write-node-typeScript-application-in-live-reload).
+Using **watch mode** is not enough for developing Node.js application because we also need to re-run Node after changes in the code. Check out the post [How To Setup Simple Workflow To Write Node TypeScript Application In Live Reload](https://mkvl.me/blog/article/setup-simple-workflow-to-write-node-typeScript-application-in-live-reload).
 
 ## Checking code without compilation
 
@@ -333,9 +333,9 @@ Another aspect of using TypeScript in modern Front End or Back End development i
 
 Compiling TypeScript or JavaScript code can be a quite long process. If you need to just check your types and validate your code you can use TypeScript without compilation by this command:
 
-````
+```
 tsc --noEmit ./src/main.ts
-````
+```
 
 ## Conclusions
 

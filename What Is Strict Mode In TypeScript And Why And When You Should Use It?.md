@@ -9,7 +9,10 @@ tags:
   - typescriptbook
 date: "2021-07-16 04:00:00"
 image: images/what-is-strict-mode-in-typescript-and-why-and-when-you-should-use-it-thumbnail.jpeg
-images: ['images/what-is-strict-mode-in-typescript-and-why-and-when-you-should-use-it-thumbnail.jpeg']
+images:
+  [
+    "images/what-is-strict-mode-in-typescript-and-why-and-when-you-should-use-it-thumbnail.jpeg",
+  ]
 imageCopyright: Vlado Paunovic
 imageCopyrightUrl: "https://www.instagram.com/vlado.photo"
 keywords:
@@ -20,7 +23,7 @@ type: blog
 public: true
 ---
 
-There are many options and parameters that can be used in the TypeScript configuration. One of the important "groups" of options is strict options. These options provide us the ability to write the safest code. How? Because TypeScript was developed primarily as **superset of JavaScript**, by default it allows us to write code that is not super strict in types and other aspects. It was made like this because TypeScript should be easily used by JavaScript developers. JavaScript doesn't have static types and is more flexible in some aspects of programming. It has many features to write code *faster* and *easier* (at first). However, the other side of this is that you probably will have more places where your code is unsafe. It means that the count of cases where your program will fall is big. TypeScript partially solves this problem.
+There are many options and parameters that can be used in the TypeScript configuration. One of the important "groups" of options is strict options. These options provide us the ability to write the safest code. How? Because TypeScript was developed primarily as **superset of JavaScript**, by default it allows us to write code that is not super strict in types and other aspects. It was made like this because TypeScript should be easily used by JavaScript developers. JavaScript doesn't have static types and is more flexible in some aspects of programming. It has many features to write code _faster_ and _easier_ (at first). However, the other side of this is that you probably will have more places where your code is unsafe. It means that the count of cases where your program will fall is big. TypeScript partially solves this problem.
 
 ## What Is Strict Mode?
 
@@ -30,17 +33,17 @@ TypeScript strict mode is a bunch of TypeScript compiler parameters (that can be
 
 TypeScript "strict mode" could be enabled in the TypeScript configuration file by one OR a few parameters. It's a group of parameters that can be enabled individually or can be enabled all at once by one parameter.
 
-The "main strict mode" parameter is called **strict**. It is a part of **compilerOptions** in **tsconfig.json**. If you set this parameter to **true** it will automatically set specific several parameters of configuration to **true**. Another important nuance is that if you enable **strict** parameter instead of individual strict checks parameters, the TypeScript compiler will *automatically* check your code with all new strict checks parameters that TypeScript may have in the next versions.
+The "main strict mode" parameter is called **strict**. It is a part of **compilerOptions** in **tsconfig.json**. If you set this parameter to **true** it will automatically set specific several parameters of configuration to **true**. Another important nuance is that if you enable **strict** parameter instead of individual strict checks parameters, the TypeScript compiler will _automatically_ check your code with all new strict checks parameters that TypeScript may have in the next versions.
 
 Strict checks parameters are:
 
-* noImplicitAny
-* strictNullChecks
-* strictFunctionTypes
-* strictBindCallApply
-* strictPropertyInitialization
-* noImplicitThis
-* alwaysStrict
+- noImplicitAny
+- strictNullChecks
+- strictFunctionTypes
+- strictBindCallApply
+- strictPropertyInitialization
+- noImplicitThis
+- alwaysStrict
 
 I will introduce you to each of these parameters in next posts of the series. Let's focus on **strict mode** itself.
 
@@ -56,15 +59,15 @@ Why strict mode in TypeScript can be enabled by several parameters? These parame
 
 ## In Practice
 
-Let's look at the example. Here is the simple console app that asks a user to type its name and then if the user exists in a database (which is basically [JSON](JSON.md) file with an array of users) prints greetings in a terminal. The source of an example is available [here](https://github.com/maxoidIO/ts-node-sample/tree/strict-mode-example). Just create a new TypeScript project and create a few files with the code presented below.
+Let's look at the example. Here is the simple console app that asks a user to type its name and then if the user exists in a database (which is basically [JSON](JSON.md) file with an array of users) prints greetings in a terminal. The source of an example is available [here](https://github.com/mkvl0/ts-node-sample/tree/strict-mode-example). Just create a new TypeScript project and create a few files with the code presented below.
 
-````bash
-git clone https://github.com/maxoidIO/ts-node-sample/tree/strict-mode-example
-````
+```bash
+git clone https://github.com/mkvl0/ts-node-sample/tree/strict-mode-example
+```
 
 The app has three files or modules with functions. The entry point of the app is file **src/main.ts**:
 
-````ts
+```ts
 import { createQuestioner } from "./createQuestioner";
 import { greeting } from "./greeting";
 import usersDB from "./users.json";
@@ -86,15 +89,15 @@ async function main() {
 }
 
 main();
-````
+```
 
 We are not interested in the module **createQuestioner**. Let's perceive it as a third-party library with some API. What we really need to focus on is file **src/greeting.ts**:
 
-````ts
+```ts
 export function greeting(names) {
   console.log(`Hello, ${names.map((name) => name.toLowerCase()).join(", ")}!`);
 }
-````
+```
 
 Pretty simple code, isn't it? We didn't specify the type of parameter names but we expect that there will be an array of strings.
 
@@ -102,15 +105,15 @@ Okay, let's run our small application. Did you see any issues in the code? Becau
 
 Run the app by the following command:
 
-````bash
+```bash
 tsc && node dist/main.js
-````
+```
 
 Or
 
-````bash
+```bash
 npm run dev
-````
+```
 
 After typing a name (it can be whatever name you want) you should see that there are errors in our code. But they were identified only after running **Node**, i.e. in runtime. So, the TypeScript compiler didn't find any problems in the code.
 
@@ -120,7 +123,7 @@ Now, let's enable **strict mode** and see what happens. After enabling **strict*
 
 And if you run TypeScript compilation you will see that TypeScript highlight the error:
 
-````
+```
 src/greeting.ts:1:26 - error TS7006: Parameter 'names' implicitly has an 'any' type.
 
 1 export function greeting(names) {
@@ -131,19 +134,19 @@ src/greeting.ts:2:36 - error TS7006: Parameter 'name' implicitly has an 'any' ty
 2   console.log(`Hello, ${names.map((name) => name.toLowerCase()).join(', ')}!`);
                                      ~~~~
 Found 2 errors
-````
+```
 
 Basically, the problem is that we didn't specify the type of parameter **names** in a function **greeting**. It means that the function can be called with wrong arguments in module **main**. Specify the type in **src/greeting.ts**. It should be an array of string values:
 
-````ts
+```ts
 export function greeting(names: string[]) {
   console.log(`Hello, ${names.map((name) => name.toLowerCase()).join(", ")}!`);
 }
-````
+```
 
 Great! Let's see that we have in a file **main.ts**. In an editor, you probably may see that there is an error. Let's run TypeScript and see what's wrong here.
 
-````
+```
 src/main.ts:12:14 - error TS2345: Argument of type '{ username: string; age: number; } | undefined' is not assignable to parameter of type 'string[]'.
   Type 'undefined' is not assignable to type 'string[]'.
 
@@ -151,11 +154,11 @@ src/main.ts:12:14 - error TS2345: Argument of type '{ username: string; age: num
                 ~~~~~~~~~~~~~~~
 
 Found 1 error
-````
+```
 
-Okay. So, the problem is that we put a value of variable **foundUser** as itself (it is an object or undefined) but a function **greeting** receives an array of string values. It seems like a small typo because all we need to do is write argument **foundUser.username** as bracketed. Also, because variable **foundUser** could be *undefined* we need to check that is it false or not:
+Okay. So, the problem is that we put a value of variable **foundUser** as itself (it is an object or undefined) but a function **greeting** receives an array of string values. It seems like a small typo because all we need to do is write argument **foundUser.username** as bracketed. Also, because variable **foundUser** could be _undefined_ we need to check that is it false or not:
 
-````ts
+```ts
 async function main() {
   try {
     const questioner = createQuestioner();
@@ -177,16 +180,16 @@ async function main() {
     process.exit();
   }
 }
-````
+```
 
 Now, let's run the app again:
 
-````
+```
 npm run dev
-````
+```
 
 It should work correctly.
 
 ## Conclusions
 
-So now you know that even code that compiles by **tsc** successfully can have issues and incorrect behavior when this code is running. The goal of TypeScript is to prevent times when the application works with errors or doesn't work at all ***before*** the code of the application executes. TypeScript analysis your code and based on types that were specified by you or by *type inference* and highlight part of the code with potential risk. And the best way it works is in **strict mode**. Using **strict mode** you will catch more potential errors and typos in your codebase before running the program.
+So now you know that even code that compiles by **tsc** successfully can have issues and incorrect behavior when this code is running. The goal of TypeScript is to prevent times when the application works with errors or doesn't work at all **_before_** the code of the application executes. TypeScript analysis your code and based on types that were specified by you or by _type inference_ and highlight part of the code with potential risk. And the best way it works is in **strict mode**. Using **strict mode** you will catch more potential errors and typos in your codebase before running the program.

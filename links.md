@@ -8,13 +8,11 @@ in_feed: false
 
 # Links
 
-- [Twitter](https://maxoid.io/twitter)
-- [GitHub](https://maxoid.io/github)
-- [Newsletter](https://maxoid.io/newsletter)
-- [YouTube](https://maxoid.io/youtube)
-- [Patreon](https://maxoid.io/patreon)
-- [GitLab][https://maxoid.io/gitlab]
-- [HN](https://maxoid.io/hackernews)
-- [Reddit](https://maxoid.io/reddit)
-
-
+- [Twitter](https://mkvl.me/twitter)
+- [GitHub](https://mkvl.me/github)
+- [Newsletter](https://mkvl.me/newsletter)
+- [YouTube](https://mkvl.me/youtube)
+- [Patreon](https://mkvl.me/patreon)
+- [GitLab][https://mkvl.me/gitlab]
+- [HN](https://mkvl.me/hackernews)
+- [Reddit](https://mkvl.me/reddit)

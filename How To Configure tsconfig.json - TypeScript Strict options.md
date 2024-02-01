@@ -4,7 +4,7 @@ aliases:
   - /blog/article/how-to-configure-tsconfigjson-typescript-strict-options
 date: "2021-07-29 17:00:00"
 image: images/how-to-configure-tsconfigjson-typescript-strict-options.jpeg
-images: ['images/how-to-configure-tsconfigjson-typescript-strict-options.jpeg']
+images: ["images/how-to-configure-tsconfigjson-typescript-strict-options.jpeg"]
 title: "How To Configure tsconfig.json: TypeScript Strict options"
 tags:
   - typescript
@@ -25,24 +25,48 @@ keywords:
   - alwaysStrict
 type: blog
 public: true
-twitterTags: ["TypeScript", "SoftwareEngineer", "softwaredevelopment", "DEVCommunity", "development", "javascript", "web", "nodejs", "webdevelopment", "howto"]
-linkedinTags: ["TypeScript", "SoftwareEngineer", "softwaredevelopment", "DEVCommunity", "development", "javascript", "web", "nodejs", "webdevelopment", "howto"]
+twitterTags:
+  [
+    "TypeScript",
+    "SoftwareEngineer",
+    "softwaredevelopment",
+    "DEVCommunity",
+    "development",
+    "javascript",
+    "web",
+    "nodejs",
+    "webdevelopment",
+    "howto",
+  ]
+linkedinTags:
+  [
+    "TypeScript",
+    "SoftwareEngineer",
+    "softwaredevelopment",
+    "DEVCommunity",
+    "development",
+    "javascript",
+    "web",
+    "nodejs",
+    "webdevelopment",
+    "howto",
+  ]
 ---
 
-TypeScript is not just a superset of JavaScript with static types. It is also a quite configurable tool that can be used for different types of projects. One parameter or group of parameters that can be configured is **strict**. If you are not familiar with strict mode and why you should use it for a new project then check out the post [What Is Strict Mode In TypeScript, Why And When You Should Use It?](https://maxoid.io/blog/article/what-is-strict-mode-in-typescript-and-why-and-when-you-should-use-it). In this post I focus more on a practical side of this topic.
+TypeScript is not just a superset of JavaScript with static types. It is also a quite configurable tool that can be used for different types of projects. One parameter or group of parameters that can be configured is **strict**. If you are not familiar with strict mode and why you should use it for a new project then check out the post [What Is Strict Mode In TypeScript, Why And When You Should Use It?](https://mkvl.me/blog/article/what-is-strict-mode-in-typescript-and-why-and-when-you-should-use-it). In this post I focus more on a practical side of this topic.
 
-TypeScript's strict mode parameter can be configurated as several individual parameters for each specific case of type checking. So, basically, if you set the parameter **strict** to *true* in **tsconfig.json** it means that all these strict options are set to *true*.
+TypeScript's strict mode parameter can be configurated as several individual parameters for each specific case of type checking. So, basically, if you set the parameter **strict** to _true_ in **tsconfig.json** it means that all these strict options are set to _true_.
 
 List of strict options:
 
-* useUnknownInCatchVariables (new)
-* noImplicitAny
-* strictNullChecks
-* strictFunctionTypes
-* strictBindCallApply
-* strictPropertyInitialization
-* noImplicitThis
-* alwaysStrict
+- useUnknownInCatchVariables (new)
+- noImplicitAny
+- strictNullChecks
+- strictFunctionTypes
+- strictBindCallApply
+- strictPropertyInitialization
+- noImplicitThis
+- alwaysStrict
 
 Let's explore each strict option in practice.
 
@@ -50,7 +74,7 @@ Let's explore each strict option in practice.
 
 This option was introduced in [TypeScript 4.4](https://devblogs.microsoft.com/typescript/announcing-typescript-4-4-beta/#use-unknown-catch-variables).
 
-The problem is that when we use construction **try catch** the type of variable **error** in *catch* is **any**:
+The problem is that when we use construction **try catch** the type of variable **error** in _catch_ is **any**:
 
 ![](/images/strict-typescript-screen-1.png)
 
@@ -58,20 +82,20 @@ It increases the potential risk of errors and application malfunction. The optio
 
 If you set option **useUnknownInCatchVariables** to `true` then variable **error** in every **try catch** in your code base will have type `unknown`:
 
-````json
+```json
 {
   "compilerOptions": {
     // ...
     "useUnknownInCatchVariables": true
   }
 }
-````
+```
 
 ![](/images/strict-typescript-screen-2.png)
 
 You can also use type **Error** for error variable:
 
-````ts
+```ts
 try {
   // some code
 } catch (e) {
@@ -79,7 +103,7 @@ try {
     console.error(e.message);
   }
 }
-````
+```
 
 ## TypeScript Strict options in tsconfig.json: noImplicitAny
 
@@ -87,61 +111,61 @@ Let's start with option **noImplicitAny**.
 
 In the **main.ts** file (or whatever file you want) let's create a simple function:
 
-````ts
+```ts
 function printData(data) {
   console.log(data);
 }
-````
+```
 
 If you run `tsc` command you will see that TypeScript successfully compiles the code because there is no error.
 
 Now, set the options in configuration file **tsconfig.json** in your project:
 
-````json
+```json
 {
   "compilerOptions": {
     "noImplicitAny": true
   }
 }
-````
+```
 
 If you're writing your code in an editor like [Visual Studio Code](Visual%20Studio%20Code.md) or some IDE you probably already see that something is wrong with parameter **data** in the function. Let's run TypeScript compiler `tsc` and see what it will tell us.
 
 TypeScript compiler will print something like this:
 
-````
+```
 error TS7006: Parameter 'data' implicitly has an 'any' type.
 
 4 function printData(data) {
                      ~~~~
 Found 1 error.
-````
+```
 
-So, if you set the option **noImplicitAny** to `true`, TypeScript won't allow us to write functions with parameters without types of parameters. The thing is that TypeScript doesn't know what type of the parameter **data** is and it doesn't *infer* because there is no information in the code about that value should be there.
+So, if you set the option **noImplicitAny** to `true`, TypeScript won't allow us to write functions with parameters without types of parameters. The thing is that TypeScript doesn't know what type of the parameter **data** is and it doesn't _infer_ because there is no information in the code about that value should be there.
 
 You need to set some type to avoid this TypeScript error. For example, I'll specify type **string** for the data:
 
-````ts
+```ts
 function printData(data: string) {
   console.log(data);
 }
-````
+```
 
-Also, if your parameter is not required, you can specify the default value of the parameter. And there is the thing: if you set the default value of the parameter then you won't need to specify the type. In that case, TypeScript will understand what type of the parameter is by *Type inference*.
+Also, if your parameter is not required, you can specify the default value of the parameter. And there is the thing: if you set the default value of the parameter then you won't need to specify the type. In that case, TypeScript will understand what type of the parameter is by _Type inference_.
 
 An example. The default value of the parameter is empty **string** so type of the parameter is **string**:
 
-````ts
+```ts
 function printData(data = "") {
   console.log(data);
 }
-````
+```
 
 ### TypeScript Strict options in tsconfig.json: Why Should noImplicitAny Be Enabled?
 
 By setting the option **noImplicitAny** to `true`, TypeScript forces you to write safer code. How? The problem with ignorance of the type of the parameter is that you can manipulate the value in the code by methods that can't work with this value. For example, inside the function **printData** you can use method **.toLowerCase** that works with type **string**. Your colleague (or even you!) can use the function **printData** somewhere in the future. Because you don't know what the type of the parameter **data** is, you probably can put the number value to this parameter.
 
-````ts
+```ts
 function printData(data) {
   console.log(data.toLowerCase());
 }
@@ -151,30 +175,29 @@ async function main() {
 }
 
 main();
-````
+```
 
 The code above will successfully be compiled by `tsc` because there are no errors from the TypeScript perspective. But when you will run the program in the [Web browser](Web%20browser.md) or by [Node](Node.md) as in our case, you will see that program falls:
 
-````
+```
 node dist/main.js
 /ts-node-sample/dist/main.js:13
     console.log(data.toLowerCase());
                      ^
 TypeError: data.toLowerCase is not a function
-````
+```
 
 You can avoid this error before executing the code by specifying the type of the parameter. The TypeScript's option **noImplicitAny** won't allow you to escape from specifying the type in the new code.
 
 ## TypeScript Strict options in tsconfig.json: strictNullChecks
 
- > 
- > Source code of this example is available on [GitHub](https://github.com/maxoidIO/ts-node-sample/tree/strict-options-strict-null-checks)
+> Source code of this example is available on [GitHub](https://github.com/mkvl0/ts-node-sample/tree/strict-options-strict-null-checks)
 
 This parameter obligates us to make a check of the variable existing. For example, let's say we have an array of some object. This data is available in a code of app from JSON file:
 
 **src/inventory.json**
 
-````json
+```json
 [
   {
     "id": "1",
@@ -195,13 +218,13 @@ This parameter obligates us to make a check of the variable existing. For exampl
     "icon": "🛡"
   }
 ]
-````
+```
 
 In some modules, we have a code where this JSON file is imported and used as a database. The app is simple: it asks the user to type the name of the item from inventory and then if this item exists the program will print information about it.
 
 **src/main.ts**
 
-````ts
+```ts
 import { createQuestioner } from "./createQuestioner";
 import { greeting } from "./greeting";
 
@@ -231,11 +254,11 @@ async function main() {
 }
 
 main();
-````
+```
 
-If you run this program by `npm run dev`, type any name and one of three item's names (sword, bow, shield) the program will run as it should. The problems begin when you type the name of the item that *does not exist* in the inventory. If you try this, you'll see something like this:
+If you run this program by `npm run dev`, type any name and one of three item's names (sword, bow, shield) the program will run as it should. The problems begin when you type the name of the item that _does not exist_ in the inventory. If you try this, you'll see something like this:
 
-````
+```
 ❯ npm run dev
 
 > tsc-intro@1.0.0 dev
@@ -245,24 +268,24 @@ Type your username: byteski
 Hello, @byteski!
 Type the name of the inventory item: spear
 TypeError: Cannot read property 'icon' of undefine
-````
+```
 
-All we need to do to fix this problem is to add the code that checks the variable existing before using it for printing the result. But the point is that [TypeScript](TypeScript.md) should highlight that we need to fix the potential problem. To do it just set option **strictNullChecks** to *true*:
+All we need to do to fix this problem is to add the code that checks the variable existing before using it for printing the result. But the point is that [TypeScript](TypeScript.md) should highlight that we need to fix the potential problem. To do it just set option **strictNullChecks** to _true_:
 
 **tsconfig.json**
 
-````json
+```json
 {
   "compilerOptions": {
     // ...
     "strictNullChecks": true
   }
 }
-````
+```
 
 Now, let's run `npm run dev` and see that happens:
 
-````bash
+```bash
 src/main.ts:20:33 - error TS2532: Object is possibly 'undefined'.
 
 20       `You've chosen an item: ${foundItem.icon} ${foundItem.name} (lvl ${foundItem.level})`
@@ -279,11 +302,11 @@ src/main.ts:20:74 - error TS2532: Object is possibly 'undefined'.
                                                                             ~~~~~~~~~
 
 Found 3 errors
-````
+```
 
 Great! Now we have information about where the problem is. Just add checking the variable **foundItem**:
 
-````ts
+```ts
 async function main() {
   try {
     const questioner = createQuestioner();
@@ -312,7 +335,7 @@ async function main() {
     console.error(e);
   }
 }
-````
+```
 
 ### TypeScript Strict options in tsconfig.json: strictNullChecks and Exclamation mark
 
@@ -320,7 +343,7 @@ async function main() {
 
 You can also use "!" in such a case when **you are sure** that found item or element exist. Let's see an example:
 
-````ts
+```ts
 async function main() {
   try {
     const questioner = createQuestioner();
@@ -357,32 +380,31 @@ async function main() {
     console.error(e);
   }
 }
-````
+```
 
-In this case, a user is not typing the name of the inventory item but type an option number offered by the app. Because the code checks that the user typed option number that surely exists (the line `if (!itemsIds.includes(option)) {`) we don't need to manually check that variable **foundItem** has data inside. But TypeScript will tell us that we need to check this variable because *Object is possibly 'undefined'*. To avoid this highlight we can use **exclamation mark**:
+In this case, a user is not typing the name of the inventory item but type an option number offered by the app. Because the code checks that the user typed option number that surely exists (the line `if (!itemsIds.includes(option)) {`) we don't need to manually check that variable **foundItem** has data inside. But TypeScript will tell us that we need to check this variable because _Object is possibly 'undefined'_. To avoid this highlight we can use **exclamation mark**:
 
-````ts
+```ts
 console.log(
   `You've chosen an item: ${foundItem!.icon} ${foundItem!.name} (lvl ${
     foundItem!.level
   })`
 );
-````
+```
 
 It tells TypeScript that we are totally sure that **foundItem** is not undefined or null. After that you can run the app it will work correctly.
 
-*I recommend not use **exclamation mark** very often because it can expand the count of potential mistakes in the future. Use it only in case when **you are totally sure** that some data exists.*
+_I recommend not use **exclamation mark** very often because it can expand the count of potential mistakes in the future. Use it only in case when **you are totally sure** that some data exists._
 
 ## TypeScript Strict options in tsconfig.json: strictBindCallApply
 
- > 
- > Source code of this example is available on [GitHub](https://github.com/maxoidIO/ts-node-sample/tree/strict-options-strict-bind-call-apply)
+> Source code of this example is available on [GitHub](https://github.com/mkvl0/ts-node-sample/tree/strict-options-strict-bind-call-apply)
 
 The next option is not so useful nowadays since we don't need to use **bind()** and related methods much often in modern JavaScript. But anyway, if you need to use bind(), call(), or apply() then this option might be useful for you.
 
 The example is unusual but you may come across this in existing projects with an old version of ECMAScript (where arrow functions are not available or their support is disabled for some reason). This function creates an object of a non-player character. You can start the dialog with this character (in our example it starts automatically after running the app) but the character is busy right now so it answers later (after 2 sec):
 
-````ts
+```ts
 import { Questioner } from "./createQuestioner";
 
 export function createMerchant(name: string, questioner: Questioner) {
@@ -409,11 +431,11 @@ export function createMerchant(name: string, questioner: Questioner) {
 
   return character;
 }
-````
+```
 
 Let's create a merchant in **main** module:
 
-````ts
+```ts
 import { createQuestioner } from "./createQuestioner";
 import { greeting } from "./greeting";
 import { createMerchant } from "./merchant";
@@ -435,44 +457,44 @@ async function main() {
 }
 
 main();
-````
+```
 
 Now, if you run the program and type your name and level (for example, 10) and then answer "yes" in dialog (type "1") when you see something goes wrong with your level:
 
-````bash
+```bash
 Excellent! Now your level is: 10
-````
+```
 
-Typical problem with `string` and `number` values in [JavaScript](JavaScript.md). Notice that in **createMerchant** in method **startDialog** a parameter *level* has type `string` but in function **greeting** the parameter *caller* has field *level* with type `number`. But we don't have any type checking errors after running **tsc**. We should tell TypeScript to check parameters of function that called by **bind()** (call(), apply()). This is what option **strictBindCallApply** is for.
+Typical problem with `string` and `number` values in [JavaScript](JavaScript.md). Notice that in **createMerchant** in method **startDialog** a parameter _level_ has type `string` but in function **greeting** the parameter _caller_ has field _level_ with type `number`. But we don't have any type checking errors after running **tsc**. We should tell TypeScript to check parameters of function that called by **bind()** (call(), apply()). This is what option **strictBindCallApply** is for.
 
 **tsconfig.json**
 
-````json
+```json
 {
   "compilerOptions": {
     // ...
     "strictBindCallApply": true
   }
 }
-````
+```
 
-Now, if you run the program you will see that TypeScript highlights the problem with different types of field *level* in function **createMerchant**:
+Now, if you run the program you will see that TypeScript highlights the problem with different types of field _level_ in function **createMerchant**:
 
-````bash
+```bash
 src/merchant.ts:21:38 - error TS2769: No overload matches this call.
 ...
 21       setTimeout(greeting.bind(this, caller), 2000);
                                         ~~~~~~
 Found 1 error.
-````
+```
 
 ## TypeScript Strict options in tsconfig.json: strictFunctionTypes
 
-This option is intended for quite specific cases. If this option was set to *true* then TypeScript will not allow you to use a function in a case when types of parameters of this function are not the same as parameter's types in specified *type*.
+This option is intended for quite specific cases. If this option was set to _true_ then TypeScript will not allow you to use a function in a case when types of parameters of this function are not the same as parameter's types in specified _type_.
 
 An example:
 
-````ts
+```ts
 type loggerFn = (id: number | string) => void;
 
 const logTransaction: loggerFn = (id: string) => {
@@ -480,11 +502,11 @@ const logTransaction: loggerFn = (id: string) => {
 };
 
 logTransaction(transactionId);
-````
+```
 
 In this case, if options are enabled, **tsc** will return an error message after running:
 
-````bash
+```bash
 src/main.ts:11:11 - error TS2322: Type '(id: string) => void' is not assignable to type 'loggerFn'.
   Types of parameters 'id' and 'id' are incompatible.
     Type 'string | number' is not assignable to type 'string'.
@@ -493,7 +515,7 @@ src/main.ts:11:11 - error TS2322: Type '(id: string) => void' is not assignable 
 11     const logTransaction: loggerFn = (id: string) => {
              ~~~~~~~~~~~~~~~
 Found 1 error
-````
+```
 
 Theoretically, in this case you could specify the parameter **id** as a number and call function **logTransaction** like that: `logTransaction(parseInt(transactionId))`. But still, you will have a type-checking error because you cannot use method **trim()** for a number value.
 
@@ -501,11 +523,11 @@ Anyway, is good to know what specific options are needed if you enabled **strict
 
 ## TypeScript Strict options in tsconfig.json: noImplicitThis
 
-You might know that [JavaScript](JavaScript.md) has a quite important nuance with the variable "this". Let's say, you have a method that prints a value of an object's field. If you wrote this method as *function declaration* then will lose "this" of an object where the method is specified. I would say that it's one of the famous "features" of [JavaScript](JavaScript.md) and Internet has tons of materials about this.
+You might know that [JavaScript](JavaScript.md) has a quite important nuance with the variable "this". Let's say, you have a method that prints a value of an object's field. If you wrote this method as _function declaration_ then will lose "this" of an object where the method is specified. I would say that it's one of the famous "features" of [JavaScript](JavaScript.md) and Internet has tons of materials about this.
 
 Here is an example:
 
-````ts
+```ts
 const createCharacter = (name: string, level: number) => {
   return {
     label: `[${level} lvl] ${name}`,
@@ -521,43 +543,43 @@ const ranger = createCharacter("Ranger", 77);
 const printRangerInfo = ranger.info("Neutral");
 
 printRangerInfo();
-````
+```
 
 After running `npm run dev` you will see that it throws an error:
 
-````bash
+```bash
 TypeError: Cannot read property 'label' of undefined
-````
+```
 
 Now, let's set option **noImplicitThis** in configuration file:
 
-````json
+```json
 {
   "compilerOptions": {
     // ...
     "noImplicitThis": true
   }
 }
-````
+```
 
 After that [TypeScript](TypeScript.md) will highlight an error in the code:
 
-````bash
+```bash
 error TS2683: 'this' implicitly has type 'any' because it does not have a type annotation.
 14             console.log(`${prefix}: ${this.label}`);
                                          ~~~~
-````
+```
 
-````bash
+```bash
 13           return function () {
 					~~~~~~~~
 An outer value of 'this' is shadowed by this container.
 Found 1 error
-````
+```
 
 By doing so we can fix the problem before running an application. One of a solution, in this case, is using an arrow function:
 
-````ts
+```ts
 const createCharacter = (name: string, level: number) => {
   return {
     label: `[${level} lvl] ${name}`,
@@ -568,7 +590,7 @@ const createCharacter = (name: string, level: number) => {
     },
   };
 };
-````
+```
 
 When you change the nested function to arrow one [TypeScript](TypeScript.md) will stop highlight this line as an error. After running `npm run dev` you will see that the program works correctly.
 
@@ -578,7 +600,7 @@ The next option is directly related to classes in [JavaScript](JavaScript.md) an
 
 Let's say we have a special class for game characters:
 
-````ts
+```ts
 export class Character {
   name: string;
   level: string;
@@ -589,11 +611,11 @@ export class Character {
     console.log(`[${this.level}] ${this.name}: Hello, ${callerName}!`);
   }
 }
-````
+```
 
 Now, in the **main** module we create a character's object. The character should greetings the player:
 
-````ts
+```ts
 async function main() {
   try {
     const questioner = createQuestioner();
@@ -608,20 +630,20 @@ async function main() {
     console.error(e);
   }
 }
-````
+```
 
 If you run this small example, you will see:
 
-````bash
+```bash
 Type your first name: Max
 [undefined] undefined: Hello, Max!
-````
+```
 
-I guess we didn't give a name to the traveler! Okay, we made a mistake in the code. It's not a big deal. The real problem is that [TypeScript](TypeScript.md) didn't say anything about it! Notice that `constructor` of class **Character** is empty. But also there is no highlighted error or warning. We don't have a specific syntax like `required name: string` in TypeScript to declare that properties *name* and *level* are required for initialization in the class **Character**. However, we can enable option **strictPropertyInitialization** and after that [TypeScript](TypeScript.md) compiler will tell us that we didn't initialize properties name and level in the constructor method of class Character.
+I guess we didn't give a name to the traveler! Okay, we made a mistake in the code. It's not a big deal. The real problem is that [TypeScript](TypeScript.md) didn't say anything about it! Notice that `constructor` of class **Character** is empty. But also there is no highlighted error or warning. We don't have a specific syntax like `required name: string` in TypeScript to declare that properties _name_ and _level_ are required for initialization in the class **Character**. However, we can enable option **strictPropertyInitialization** and after that [TypeScript](TypeScript.md) compiler will tell us that we didn't initialize properties name and level in the constructor method of class Character.
 
 An option **strictPropertyInitialization** can be enabled only if option **strictNullChecks** is enabled too.
 
-````ts
+```ts
 {
   "compilerOptions": {
     // ...
@@ -629,29 +651,29 @@ An option **strictPropertyInitialization** can be enabled only if option **stric
     "strictPropertyInitialization": true
   }
 }
-````
+```
 
 And after that we run `tsc` and see:
 
-````bash
+```bash
 error TS2564: Property 'name' has no initializer and is not definitely assigned in the constructor.
 
 2   name: string;
     ~~~~
-````
+```
 
-````bash
+```bash
 src/Character.ts:3:3 - error TS2564: Property 'level' has no initializer and is not definitely assigned in the constructor.
 
 3   level: string;
     ~~~~~
 
 Found 2 errors.
-````
+```
 
 This is exactly what we need. Now, let's fix the problem:
 
-````ts
+```ts
 export class Character {
   // Class Property Inference from Constructors
   // since version 4.0 TypeScript can “take" types of properties from a constructor
@@ -668,7 +690,7 @@ export class Character {
     console.log(`[${this.level}] ${this.name}: Hello, ${callerName}!`);
   }
 }
-````
+```
 
 And don't forget to give a name for the traveler in **main** module!
 

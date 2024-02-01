@@ -4,7 +4,10 @@ aliases:
   - /blog/article/setup-simple-workflow-to-write-node-typeScript-application-in-live-reload
 date: "2021-05-12 22:10:00"
 image: images/setup-simple-workflow-to-write-node-typeScript-application-in-live-reload.png
-images: ['images/setup-simple-workflow-to-write-node-typeScript-application-in-live-reload.png']
+images:
+  [
+    "images/setup-simple-workflow-to-write-node-typeScript-application-in-live-reload.png",
+  ]
 imageCopyright: Negative Space
 imageCopyrightUrl: "https://www.pexels.com/@negativespace"
 title: "Setup Simple Workflow To Write Node TypeScript Application In Live Reload (Nodemon, ts-node)"
@@ -25,25 +28,25 @@ In this post, we will learn how to set up a Node project with TypeScript. It is 
 
 First of all, you need to install TypeScript on your computer. Install it by [npm](npm.md) or [Yarn](Yarn.md) globally.
 
-````
+```
 npm i -g typescript
-````
+```
 
-I'm sure you already installed [Node](Node.md) on your computer but maybe you need to update your version. If so, check out the post about [How To Install or Update Node by Using nvm (Node Version Manager)](https://maxoid.io/blog/article/how-to-install-or-update-node-by-using-nvm).
+I'm sure you already installed [Node](Node.md) on your computer but maybe you need to update your version. If so, check out the post about [How To Install or Update Node by Using nvm (Node Version Manager)](https://mkvl.me/blog/article/how-to-install-or-update-node-by-using-nvm).
 
 Okay, now let's create a project's folder with name whatever you want (I name it as **node-ts-setup-example**). Open this folder in Terminal and your editor (I use [Visual Studio Code](Visual%20Studio%20Code.md)).
 
 Initialize the project by npm command:
 
-````
+```
 npm init -y
-````
+```
 
 Our project as an example will be simple - it is a command-line app that asks users to type their name in the Terminal and then prints greetings with this name.
 
 Let's create a first file of the project - **main.ts**. Just put there very basic [TypeScript](TypeScript.md) code like this:
 
-````ts
+```ts
 import { createInterface } from "readline";
 import { promisify } from "util";
 
@@ -71,47 +74,47 @@ async function main() {
 }
 
 main();
-````
+```
 
 Now let's try to compile this file by using the TypeScript compiler:
 
-````
+```
 tsc main.ts
-````
+```
 
 {{< subscription >}}
 
-As you may have noticed TypeScript tells us that we need to install Type Declaration for modules of [Node](Node.md) that we use - **readline** and **util**. If you are not familiar with Type Declarations check out the post [What Are Type Declaration Files In TypeScript?](https://maxoid.io/blog/article/what-are-type-declaration-files-in-typescript). For now, let's just install these Type Declarations by [npm](npm.md):
+As you may have noticed TypeScript tells us that we need to install Type Declaration for modules of [Node](Node.md) that we use - **readline** and **util**. If you are not familiar with Type Declarations check out the post [What Are Type Declaration Files In TypeScript?](https://mkvl.me/blog/article/what-are-type-declaration-files-in-typescript). For now, let's just install these Type Declarations by [npm](npm.md):
 
-````
+```
 npm install --save-dev @types/node
-````
+```
 
 Try to compile **main.ts** again:
 
-````
+```
 tsc main.ts
-````
+```
 
 Great! The file was successfully compiled. Let's run it by [Node](Node.md) and type our name to see greetings:
 
-````
+```
 node main.js
-````
+```
 
 Awesome. But what if we need to change our code a bit? When we change that we need to compile this file again and run it by Node. It would be great if our code will be automatically compiled and executed after changing. We can automate the process by running TypeScript compiler in **watch mode**:
 
-````
+```
 tsc main.ts -w
-````
+```
 
 So now TypeScript compiler automatically compiles **main.ts** into JavaScript code. But what about executing this? Well, TypeScript can't execute the code, only compile it.
 
 We can set up the project to automate our development process. Let's start with TypeScript configuration. We need to create TypeScript configuration file in our project. We can use a special command that generates a configuration file with default settings:
 
-````
+```
 tsc --init
-````
+```
 
 It generated the file **tsconfig.json**. If you open this file you will see there are many options and parameters. I will write about it more in the next posts. All we need to do is focus on parameters **outDir** and **rootDir**. Uncomment these options in the **tsconfig.json**.
 
@@ -121,20 +124,20 @@ It generated the file **tsconfig.json**. If you open this file you will see ther
 
 Specify the options with values:
 
-````json
+```json
 {
 	...
 	"outDir": "./dist",
     "rootDir": "./src",
 	...
 }
-````
+```
 
 Also we need to uncomment parameter **moduleResolution** with value **node**:
 
-````json
+```json
 "moduleResolution": "node", /* Specify module resolution strategy: 'node' (Node.js) or 'classic' (TypeScript pre-1.6). */
-````
+```
 
 Create folder **/src** and move **main.ts** there.
 
@@ -142,9 +145,9 @@ Alright. We configured TypeScript for our project. Now we have to configure [Nod
 
 We need to install a few dev dependencies - [ts-node](ts-node.md) and [nodemon](nodemon.md):
 
-````
+```
 npm i -D ts-node nodemon
-````
+```
 
 **ts-node** is a tool that executes code that is written in TypeScript as if it is written in JavaScript. I mean, you can perceive this as running [Node](Node.md) but for TypeScript files. You can also use **ts-node** as a REPL to execute the code without files.
 
@@ -152,7 +155,7 @@ npm i -D ts-node nodemon
 
 Now let's specify section **scripts** in **package.json** file:
 
-````json
+```json
 {
 	...
 	"scripts": {
@@ -162,12 +165,12 @@ Now let's specify section **scripts** in **package.json** file:
 	},
 	...
 }
-````
+```
 
 To run dev server use this command:
 
-````
+```
 npm run dev
-````
+```
 
 Now if we change our code in **main.ts** it automatically re-compiles and re-run Node to execute the code.

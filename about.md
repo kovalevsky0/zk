@@ -8,7 +8,7 @@ in_feed: false
 
 # About me
 
-### @maxoid, a software developer
+### Max Kovalevskii, a software developer
 
 ![photo](/images/avatar.jpg)
 
@@ -22,14 +22,11 @@ I'm fun of static type checkers and languages, especially [TypeScript](TypeScrip
 
 Besides programming stuff, I like writing itself, reading weird articles, mechanical keyboards, keeping all information that I used somehow in life and taking notes - I do note-taking using [Zettelkasten method](Zettelkasten%20method.md).
 
-I find the way of learn in public is quite useful so here is my [Digital Garden](https://maxoid.io/notes).
+I find the way of learn in public is quite useful so here is my [Digital Garden](https://mkvl.me/notes).
 
-If you wanna just chat with me - feel free to email me at [me@maxoid.io](mailto:me@maxoid.io).
+If you wanna just chat with me - feel free to email me at [me@mkvl.me](mailto:me@mkvl.me).
 
 ### My links
 
-* [GitHub](https://github.com/maxoidIO)
-* [Twitter](https://twitter.com/maxoidIO)
-* [HN](https://news.ycombinator.com/user?id=maxoid)
-- [Instagram](https://www.instagram.com/maxoid.io)
-- 
+- [GitHub](https://github.com/mkvl0)
+- [Twitter](https://twitter.com/maxoidIO)

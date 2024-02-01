@@ -10,7 +10,7 @@ keywords:
 type: blog
 public: false
 imageCopyright: Max
-imageCopyrightUrl: "https://maxoid.io"
+imageCopyrightUrl: "https://mkvl.me"
 ---
 
 # empty
