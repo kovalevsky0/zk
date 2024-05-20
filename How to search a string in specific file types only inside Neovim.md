@@ -42,5 +42,5 @@ Restart `neovim`
 - Open telescope grep with args in neovim using command: `:Telescope live_grep_args`
 - Type `"<YOUR_STRING>" -g *.<EXTENSION>`
 
-![Screenshot]("./Screenshot 2024-05-20 at 14.14.55.png")
+![Screenshot]("./screenshoft-2024-05-20-14-14-55.png")
 
