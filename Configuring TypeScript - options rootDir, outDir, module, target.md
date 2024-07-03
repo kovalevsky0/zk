@@ -19,6 +19,7 @@ keywords:
   - typescript config
 type: blog
 public: true
+archive: true
 ---
 
 In the post [Getting Started With TypeScript Compiler (tsc)](https://mkvl.me/blog/article/getting-started-using-and-configuring-typescript-compiler) we started to use TypeScript compiler with a few options in a simple Node project. We used **tsc** command to compile our app with specific rules and in watch mode. It works but we can use much more options of TypeScript compiler. However, use it just like a command in the Terminal with a bunch of flags is not so comfortable. We can improve our workflow by using TypeScript configuration file - **tsconfig.json**. In this post, we will learn how to create this file and configure it.

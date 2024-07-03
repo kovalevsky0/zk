@@ -51,6 +51,7 @@ linkedinTags:
     "webdevelopment",
     "howto",
   ]
+archive: true
 ---
 
 TypeScript is not just a superset of JavaScript with static types. It is also a quite configurable tool that can be used for different types of projects. One parameter or group of parameters that can be configured is **strict**. If you are not familiar with strict mode and why you should use it for a new project then check out the post [What Is Strict Mode In TypeScript, Why And When You Should Use It?](https://mkvl.me/blog/article/what-is-strict-mode-in-typescript-and-why-and-when-you-should-use-it). In this post I focus more on a practical side of this topic.

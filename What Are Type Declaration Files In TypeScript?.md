@@ -17,6 +17,7 @@ keywords:
   - typescript
 type: blog
 public: true
+archive: true
 ---
 
 You probably have seen files with a file extension like *.d.ts* in some JavaScript or TypeScript projects (libraries or frameworks) before and you wondered what are these files and what they are for. In TypeScript they are called Type Declaration files. Let's find out what is that practically.

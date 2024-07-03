@@ -17,6 +17,7 @@ keywords:
   - nvm
 type: blog
 public: true
+archive: true
 ---
 
 ## Intro

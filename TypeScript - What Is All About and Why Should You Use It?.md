@@ -17,6 +17,7 @@ keywords:
   - typescript
 type: blog
 public: true
+archive: true
 ---
 
 ## What is TypeScript?

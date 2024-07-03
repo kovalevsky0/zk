@@ -22,6 +22,7 @@ keywords:
   - node
 type: blog
 public: true
+archive: true
 ---
 
 In this post, we will learn how to set up a Node project with TypeScript. It is not based on any framework or library like Fastify, Express, Nest, etc. Let's say you wanna build just a command-line application by using TypeScript and Node.

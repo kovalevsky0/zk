@@ -21,6 +21,7 @@ keywords:
   - typescript config
 type: blog
 public: true
+archive: true
 ---
 
 There are many options and parameters that can be used in the TypeScript configuration. One of the important "groups" of options is strict options. These options provide us the ability to write the safest code. How? Because TypeScript was developed primarily as **superset of JavaScript**, by default it allows us to write code that is not super strict in types and other aspects. It was made like this because TypeScript should be easily used by JavaScript developers. JavaScript doesn't have static types and is more flexible in some aspects of programming. It has many features to write code _faster_ and _easier_ (at first). However, the other side of this is that you probably will have more places where your code is unsafe. It means that the count of cases where your program will fall is big. TypeScript partially solves this problem.

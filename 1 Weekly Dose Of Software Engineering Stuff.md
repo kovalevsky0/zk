@@ -21,6 +21,7 @@ type: blog
 public: true
 newsletter: 1
 excerpt: "Hello there! 👋 It's the first edition of Weekly Dose Of Software Engineering Stuff - a newsletter where you can read the content of topics that might be interesting for software developers and engineers."
+archive: true
 ---
 
 > ❗️✉️ This post is a public version of the newsletter edition that was published 2 days ago. Sign up to [**Weekly Dose Of Software Engineering Stuff**](https://mkvl.me/newsletter) to be among the first to receive the newsletter.

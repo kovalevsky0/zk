@@ -17,6 +17,7 @@ keywords:
   - typescript
 type: blog
 public: true
+archive: true
 ---
 
 From the previous post [TypeScript - What Is All About And Why Should You Use It?](https://mkvl.me/blog/article/typescript-what-is-all-about-and-why-should-you-use-it) we know that TypeScript is a superset of JavaScript and programming language. But how can you use it? If you worked with JavaScript in Front End you know that your code is executing by [Web browser](Web%20browser.md). In Back End, your code is running by [Node](Node.md). What about TypeScript?

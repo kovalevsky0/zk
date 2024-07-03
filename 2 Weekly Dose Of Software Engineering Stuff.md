@@ -22,6 +22,7 @@ keywords:
 type: blog
 public: true
 excerpt: Hello there! Here is a second edition of the newsletter _Weekly Dose Of Software Engineering Stuff_.
+archive: true
 ---
 
 > ❗️✉️ This post is a public version of the newsletter edition that was published 2 days ago. Sign up to [**Weekly Dose Of Software Engineering Stuff**](https://mkvl.me/newsletter) to be among the first to receive the newsletter.
