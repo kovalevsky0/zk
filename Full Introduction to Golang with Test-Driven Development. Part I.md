@@ -59,6 +59,8 @@ type: blog
 public: true
 ---
 
+{{< subscriptiontop >}}
+
 > This is a post based on the script for my video ["A new learning way on how to write "Hello, World!" program in Go"](https://www.youtube.com/watch?v=EECXgocw4N0&t=487s) which available ["on my YouTube channel"](https://www.youtube.com/channel/UCvjx6Q_8iyME0FHiDB-nxiA) and it is a part of the upcoming course "Grokking Go Fundamentals with Tests" (GGFT).
 
 Hello and welcome. In this chapter, we will write our first [Go](https://kovalevsky.io/golang/) program. As a tradition, we will create a classic "hello world" program. It is a program that prints "Hello, World!" in the terminal after you run it. In this series, we'll do all examples in the [TDD](https://kovalevsky.io/test-driven-development/) way. [TDD (test-driven development)](https://kovalevsky.io/test-driven-development/) is a special way of writing software. That special way of writing software is based on the Test-driven development cycle. 
@@ -388,3 +390,4 @@ go run .
 
 The full source code is available on GitHub repository [GGFT](https://github.com/kovalevsky0/ggft).
 
+{{< subscription >}}

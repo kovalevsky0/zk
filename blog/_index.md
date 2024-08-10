@@ -2,4 +2,4 @@
 title: Blog
 ---
 
-
+{{< subscription >}}

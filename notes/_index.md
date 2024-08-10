@@ -15,3 +15,5 @@ I take notes following [Zettelkasten method](../Zettelkasten%20method.md) and I 
 You can start navigating my [Digital Garden](../Digital%20Garden.md) here:
 
 * [home](../home.md)
+
+{{< subscription >}}
