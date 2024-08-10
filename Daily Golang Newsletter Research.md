@@ -1,0 +1,88 @@
+# Daily Golang Newsletter Research
+
+- Newsletters
+  - Go-related
+    - [Awesome Go](https://go.libhunt.com/)
+      - Sections
+        - Popular News and Articles
+        - Popular projects
+    - The Applied Go Weekly Newsletter
+      - Sections
+        - Featured Articles
+        - Podcast corner
+        - Go tip of the week
+          - Removal of response headers for errors can break on-the-fly encoding in Go 1.23
+        - Quote
+          - "Started rolling my Go programming again. Needed to look up the date handling. Searching for "go date" was probably the search fail of the day. –Magnus Runesson"
+        - More articles, videos, talks
+        - Projects
+          - Libraries
+          - Tools and applications
+        - Completely unrelated to Go
+    - Go Weekly
+      - common section (no name, just links)
+      - Code & Tools
+      - And one for fun..
+  - others
+    - console.dev
+      - sections
+        - Interesting tools
+        - New beta releases
+    - Terminal Trove
+      - sections
+        - Terminal Tool of the Week (one)
+        - New Terminal Tools
+
+- Template
+  - sections
+    - New blog posts of the day
+    - blog posts of the day (for the all time)
+    - Videos of the day
+    - Tweets of the day
+    - Projects of the day (interesting projects, in general)
+    - New projects (new repos)
+    - Go tip of the day
+    - Go developer of the day (github trends)
+    - Quote of the day
+    - Books of the day
+    - Course of the day
+    - Unrelated to Go
+
+- Sources
+  - https://github.com/trending/go?since=daily
+  - https://bitfieldconsulting.com/posts
+  - https://www.calhoun.io/
+  - https://x.com/MattJamesBoyle
+  - https://x.com/bitfield
+  - 100 Go Mistakes and How to Avoid Them (book)
+  - https://github.com/dariubs/GoBooks
+  - https://awesome-go.com/
+  - https://threedots.tech/post/
+  - https://dev.to/t/go
+  - https://hashnode.com/n/go
+  - https://antonz.org/all/
+  - https://lobste.rs/
+  - https://www.reddit.com/r/golang/
+  - https://packagemain.tech/
+  - https://x.com/i/communities/1817186904846029101
+  - https://x.com/i/communities/1685641800449462272
+  - https://www.ardanlabs.com/blog/
+  - https://appliedgo.com/blog
+  - https://research.swtch.com/
+  - https://eli.thegreenplace.net/
+  - https://benhoyt.com/writings/
+  - https://dave.cheney.net/
+  - https://www.freecodecamp.org/news/
+
+- Promotion
+  - Hacker News
+  - https://www.producthunt.com/
+  - https://x.com/i/communities/1817186904846029101
+  - https://x.com/i/communities/1685641800449462272
+  - dev.to
+  - hashnode
+  - reddit (weekly)
+
+## See also
+
+- [[Email marketing]]
