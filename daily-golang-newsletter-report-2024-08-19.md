@@ -116,12 +116,6 @@ Here is the list of discovered interesting blog posts, videos, and projects that
 
 ### Your daily hub for Go news, insights, and projects
 
-## ⚡️ Latest
-
-Here are the newest blog posts, videos, and projects from the Go community and all around it.
-
-- 
-
 ## 🧭 Discoveries
 
 Here is the list of discovered interesting blog posts, videos, and projects that are worth checking out.
@@ -153,6 +147,8 @@ Here is the list of discovered interesting blog posts, videos, and projects that
 ---
 
 {{< dailygolangsubscription >}}
+<br />
+<br />
 
 # Daily Golang Issue #3 (2024-08-16)
 
