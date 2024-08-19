@@ -1,6 +1,7 @@
 ---
+date: 2024-08-19T10:31:32+02:00
+draft: true
 slug: daily-golang-newsletter-report-2024-08-19
-date: 2024-08-19 16:00:00
 title: I curate a daily newsletter with resources about Golang - Daily Golang. Here are the latest 6 issues of the newsletter
 tags:
   - go
@@ -16,6 +17,8 @@ Hello everyone!
 Not a while ago I started to run a daily newsletter with resources (blog posts, videos and projects) about Go (Golang) that I found interesting. Here are the lastest 6 issues of the newsletter. I hope you will find it useful. Happy coding!
 
 {{< dailygolangsubscription >}}
+<br />
+<br />
 
 # Daily Golang Issue #6 (2024-08-19)
 
@@ -77,7 +80,8 @@ Here is the list of discovered interesting blog posts, videos, and projects that
 
 Here are the newest blog posts, videos, and projects from the Go community and all around it.
 
-- 
+- ​[Go 1.23: What You Need to Know About the Latest Features](https://preview.convertkit-mail2.com/click/dpheh0hzhm/aHR0cHM6Ly93d3cueW91dHViZS5jb20vd2F0Y2g_dj10T0VTUGl0VFZ3RQ==)​
+- ​[An unordered list of things I miss in Go](https://preview.convertkit-mail2.com/click/dpheh0hzhm/aHR0cHM6Ly9rb2thZGEuY2FwaXZhcmFzLmRldi9ibG9nL2FuLXVub3JkZXJlZC1saXN0LW9mLXRoaW5ncy1pLW1pc3MtaW4tZ28v)
 
 ## 🧭 Discoveries
 
@@ -158,8 +162,9 @@ Here is the list of discovered interesting blog posts, videos, and projects that
 
 Here are the newest blog posts, videos, and projects from the Go community and all around it.
 
-- [Go is my hammer, and everything is a nail](https://www.maragu.dev/blog/go-is-my-hammer-and-everything-is-a-nail)
-- [How to find ANYTHING in Linux -- newb guide](https://www.youtube.com/watch?v=_Q9OLNiQZxE)
+- [Go is my hammer, and everything is a nail](https://preview.convertkit-mail2.com/click/dpheh0hzhm/aHR0cHM6Ly93d3cubWFyYWd1LmRldi9ibG9nL2dvLWlzLW15LWhhbW1lci1hbmQtZXZlcnl0aGluZy1pcy1hLW5haWw=)​
+- No Go Related:
+    - ​[How to find ANYTHING in Linux – newb guide](https://preview.convertkit-mail2.com/click/dpheh0hzhm/aHR0cHM6Ly93d3cueW91dHViZS5jb20vd2F0Y2g_dj1fUTlPTE5pUVp4RQ==)
 
 ## 🧭 Discoveries
 
@@ -238,7 +243,13 @@ Here is the list of discovered interesting blog posts, videos, and projects that
 
 Here are the newest blog posts, videos, and projects from the Go community and all around it.
 
--  
+- ​[Go 1.23 is released](https://preview.convertkit-mail2.com/click/dpheh0hzhm/aHR0cHM6Ly9nby5kZXYvYmxvZy9nbzEuMjM=)​
+- ​[Changelog.com - Go Time #326 - Big shoes to fill](https://preview.convertkit-mail2.com/click/dpheh0hzhm/aHR0cHM6Ly93d3cueW91dHViZS5jb20vd2F0Y2g_dj1xZ3o3T042UXpQMA==)​
+- ​[Go 1.23 in 23 minutes (ByteSizeGo)](https://preview.convertkit-mail2.com/click/dpheh0hzhm/aHR0cHM6Ly93d3cuYnl0ZXNpemVnby5jb20vZ28tMS0yMy1pbi0yMy1taW51dGVz)​
+- ​[Preemption in Go: an introduction](https://preview.convertkit-mail2.com/click/dpheh0hzhm/aHR0cHM6Ly91bnNraWxsZWQuYmxvZy9wb3N0cy9wcmVlbXB0aW9uLWluLWdvLWFuLWludHJvZHVjdGlvbi8_dXRtX3NvdXJjZT1wb2NrZXRfc2hhcmVk)​
+- 📹 [Starting new series | Let’s learn - Go language - 1](https://preview.convertkit-mail2.com/click/dpheh0hzhm/aHR0cHM6Ly93d3cueW91dHViZS5jb20vd2F0Y2g_dj0wSmlUMDN1d0FjMA==)​
+- No related to Go
+    - ​[Okay, I really like WezTerm](https://preview.convertkit-mail2.com/click/dpheh0hzhm/aHR0cHM6Ly9hbGV4cGxlc2Nhbi5jb20vcG9zdHMvMjAyNC8wOC8xMC93ZXp0ZXJtLz91dG1fc291cmNlPXBvY2tldF9zaGFyZWQ=)
 
 ## 🧭 Discoveries
 
