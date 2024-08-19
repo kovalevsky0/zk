@@ -1,6 +1,6 @@
 ---
 date: 2024-08-19T10:31:32+02:00
-draft: true
+draft: false
 slug: daily-golang-newsletter-report-2024-08-19
 title: I curate a daily newsletter with resources about Golang - Daily Golang. Here are the latest 6 issues of the newsletter
 tags:
@@ -9,12 +9,12 @@ tags:
   - newsletter
   - dailygolang
 type: dailygolang
-public: false
+public: true
 ---
 
 Hello everyone!
 
-Not a while ago I started to run a daily newsletter with resources (blog posts, videos and projects) about Go (Golang) that I found interesting. Here are the lastest 6 issues of the newsletter. I hope you will find it useful. Happy coding!
+Not a while ago I started to run a daily newsletter with resources (blog posts, videos and projects) about Go (Golang) that I found interesting. Here are the latest 6 issues of the newsletter. I hope you will find it useful. Happy coding!
 
 {{< dailygolangsubscription >}}
 <br />
@@ -40,6 +40,8 @@ Here are the newest blog posts, videos, and projects from the Go community and a
 - 📝 [GopherCon UK 2024](https://www.jvt.me/posts/2024/08/16/gophercon-uk-2024/) by Jamie Tanna
 - 🛠️ [TreeGen](https://github.com/bilbilak/treegen)
 	- ASCII Tree to Directory and File Structure Generator
+- 🛠️ [dasel](https://github.com/TomWright/dasel)
+    - Select, put and delete data from JSON, TOML, YAML, XML and CSV files with a single tool. Supports conversion between formats and can be used as a Go package.
 
 ## 🧭 Discoveries
 
