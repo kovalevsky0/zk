@@ -1,5 +1,5 @@
 ---
-date: 2024-08-19
+date: 2024-08-26
 draft: false
 slug: daily-golang-newsletter-issue-6
 title: "Daily Golang Newsletter Issue #6"
