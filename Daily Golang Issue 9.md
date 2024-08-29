@@ -1,6 +1,23 @@
-![Daily Golang Logo](logo-compact.png)
-
+---
+date: 2024-08-29
+draft: false
+slug: daily-golang-newsletter-issue-9
+title: "Daily Golang Newsletter Issue #9"
+tags:
+  - go
+  - golang
+  - newsletter
+  - dailygolang
+type: dailygolang
+public: true
+aliases: []
+---
 # Daily Golang Issue #9 (2024-08-22)
+
+> 🔥 This newsletter issue was published 7 days ago in my [Daily Golang newsletter](https://kovalevsky.io/daily-golang/). Subscribe to the newsletter to get newsletter issues with best and latest resources about Golang every day in your mailbox.
+
+
+{{< dailygolangsubscription >}}
 
 ### Your daily hub for Go news, insights, and projects
 
