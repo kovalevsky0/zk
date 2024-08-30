@@ -67,5 +67,5 @@ Prague, the Czech Republic
 
 - [kovalevsky.io](https://kovalevsky.io/)
 - [GitHub](https://github.com/kovalevsky0)
-- [X](https://twitter.com/m_kovalevsky)
+- [X.com](https://twitter.com/m_kovalevsky)
 - [YouTube](https://www.youtube.com/@m_kovalevsky)
