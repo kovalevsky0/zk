@@ -1,8 +1,8 @@
 ---
 date: 2024-08-31
 draft: false
-slug: daily-golang-newsletter-issue-1
-title: "Daily Golang Newsletter Issue #1"
+slug: daily-golang-newsletter-issue-11
+title: "Daily Golang Newsletter Issue #11"
 tags:
   - go
   - golang
