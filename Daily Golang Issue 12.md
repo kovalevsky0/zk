@@ -24,12 +24,6 @@ aliases:
 
 ### Your daily hub for Go news, insights, and projects
 
-## ⚡️ Latest
-
-Here are the newest blog posts, videos, and projects from the Go community and all around it.
-
-- 
-
 ## 🧭 Discoveries
 
 Here is the list of discovered interesting blog posts, videos, and projects that are worth checking out.
